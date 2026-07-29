@@ -1,6 +1,6 @@
 # Weas Varias
 
-un poco de todo
+No sé
 ## stefano gay
 
 subo weas de python que hago cuando me aburro
