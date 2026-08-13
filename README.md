@@ -1,6 +1,6 @@
-# Weas Varias
+# Lol
 
-No sé
-## stefano gay
+- No sé
+## xD
 
-subo weas de python que hago cuando me aburro
+python

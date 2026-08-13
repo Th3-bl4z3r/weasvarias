@@ -1,54 +1,29 @@
+from Sudoku import *
+
 print("| Python Sudoku Solver |\n")
 archivo = input("ingresa el nombre del archivo a resolver: \n~ ")
 
-
-with open(f"xd/archivos/{archivo}") as xd:
+# Abro el archivo y con un Context Manager:
+with open(f"xd/archivos/{archivo}", "r") as xd:
     j = xd.readlines()
 
-puzle = []
+puzle = [] # defino la matriz que será el Sudoku a resolver como una lista
+
 for n in j:
-    puzle.append([n[0:].strip()])
+    puzle.append([n[0:].strip()]) # añado cada línea del archivo a la matriz sin los espacios al final
 
 
+# Imprimo el puzle a resolver en un formato más "ordenado"
+print("Puzzle a resolver: \n  -------------")
 for p in puzle:
-    print(p)
-
-def verificar_fila(matriz: list, num: int, fila: int) -> bool:
-    '''
-    Función que verifica si se puede colocar un número en la fila dada.
-    retorna True en caso de no estar el número en esa fila y False en caso contrario
-    '''
-    if num < 1 or num > 9:
-        raise ValueError("El número debe ser entre 1 y 9!")
-    verificacion = False
-    p = matriz[fila]
-    if str(num) not in p[0]:
-        verificacion = True
-
-    return verificacion
+    print("  |", p[0], "|")
+print("  -------------")
 
 
-while True:
-    x = int(input("num: "))
-    if x == -1:
-        break
-    f = int(input("fila: "))
-    print(verificar_fila(puzle, x, f))
+# probando las funciones importadas del archivo Sudoku.py ...
 
-def verificar_columna(matriz: list, num: int, columna: int):
-    '''
-    Función que verifica si se puede colocar un número en la columna dada.
-    retorna True en caso de no estar en la columna y False en caso contrario
-    '''
-    if num < 1 or num > 9:
-            raise ValueError("El número debe ser entre 1 y 9!")
-    verificacion_columna = False
-    j = []
-    for n in matriz:
-        j.append(n[0][columna])
-    if str(num) not in j:
-        verificacion_columna = True
+print(f'Prueba de columna número 1 y col. 8: {columna(puzle, 1, 8)}')
 
-    return verificacion_columna
 
-print(verificar_columna(puzle, 1, 8))
+print("Prueba de grilla, número 5, fila 6, columna 7")
+print(Grilla(puzle, 5, 6 , 7))
