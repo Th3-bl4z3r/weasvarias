@@ -1,7 +1,7 @@
 from Sudoku import *
 
-print("| Python Sudoku Solver |\n")
-archivo = input("ingresa el nombre del archivo a resolver: \n~ ")
+print("________________________\n| Python Sudoku Solver |\n")
+archivo = input("ingresa el nombre del archivo a resolver: \n>>> ")
 
 # Abro el archivo y con un Context Manager:
 with open(f"xd/archivos/{archivo}", "r") as xd:
@@ -14,7 +14,7 @@ for n in j:
 
 
 # Imprimo el puzle a resolver en un formato más "ordenado"
-print("Puzzle a resolver: \n  -------------")
+print("- Puzzle a resolver: \n  -------------")
 for p in puzle:
     print("  |", p[0], "|")
 print("  -------------")
@@ -26,4 +26,4 @@ print(f'Prueba de columna número 1 y col. 8: {columna(puzle, 1, 8)}')
 
 
 print("Prueba de grilla, número 5, fila 6, columna 7")
-print(Grilla(puzle, 5, 6 , 7))
+print(Grilla(puzle, 5, 6, 1))

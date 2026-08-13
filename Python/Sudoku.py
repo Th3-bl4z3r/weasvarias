@@ -54,7 +54,7 @@ def Grilla(matriz: list, num: int, fila: int, columna: int):
 
     grilla = []
     
-    print(matriz[fila][0][columna])
+    print("N° de celda: ",matriz[fila][0][columna])
 
     if fila < 3:
         if columna < 3:
